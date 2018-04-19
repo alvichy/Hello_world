@@ -1,0 +1,52 @@
+import datetime
+
+
+def adding_birthday():
+    print('Lets find out how long \'til your birthday.')
+    p_year = int(input('So, what year were you born in [YYYY]? '))
+    p_month = int(input('Next is the month were you born in [MM]? '))
+    p_day = int(input('Last, what day were you born in [DD]? '))
+
+    bday = datetime.date(p_year, p_month, p_day)
+    pp_bday = str(bday)
+
+    print()
+    d_ans = input('So the dates ' + pp_bday + ' right [Y/N]? ')
+    d_ans = d_ans.lower().strip()
+
+    if d_ans == 'y':
+        return bday
+    elif d_ans == 'n':
+        adding_birthday()
+    else:
+        print('Did not understand. Im just using what you gave me and soldiering through though.')
+
+    return bday
+
+
+def computing_birthday(date1, date2):
+    this_bday = datetime.date(date2.year, date1.month, date1.day)
+    p_dt = this_bday - date2
+    return p_dt.days
+
+
+def computing_age(date3, date4):
+    p_da = date4 - date3
+    return p_da
+
+
+def print_days_remaining(rdays):
+    if rdays < 0:
+        print('WOW! Missed your birthday {} days ago'.format(-rdays))
+    elif rdays > 0:
+        print('It\'s your bday in {} days!!'.format(rdays))
+    else:
+        print('Happy BDAY!!')
+
+
+def bday_main():
+    bday = adding_birthday()
+    today = datetime.date.today()
+    p_dt = computing_birthday(bday, today)
+    p_da = computing_age(bday, today)
+    print_days_remaining(p_dt)
