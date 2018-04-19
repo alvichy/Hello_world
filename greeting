@@ -1,0 +1,25 @@
+def intro():
+    print('Hello! Lets get started!')
+    p_name = input('What\'s your name? ')
+    print('HI {}!! Nice to meet you!'.format(p_name))
+    print()
+
+
+def country_if():
+    location = input('Where are you from? ')
+    location = location.lower()
+
+    hometown = ['uk', 'united kingdom', 'london']
+
+    if location == hometown:
+        print('HAHA!! Same here! I knew we were connected!')
+    else:
+        print('That must be a nice place. Hopefully I can visit soon.')
+    print()
+    
+#seems the list does not work when using if statements -> any ideas?
+
+
+def hello_main():
+    intro()
+    country_if()
