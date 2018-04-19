@@ -1,5 +1,5 @@
 import bday_test
-import hello_world
+import greeting
 
 
 def main():
@@ -29,7 +29,7 @@ def options():
         cmd = cmd.lower().strip()
 
         if cmd == '1':
-            hello_world.hello_main()
+            greeting.hello_main()
         elif cmd == '2':
             bday_test.bday_main()
         elif cmd == '3':
