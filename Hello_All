@@ -1,0 +1,45 @@
+import bday_test
+import hello_world
+
+
+def main():
+    header()
+    options()
+
+
+def header():
+    print('--------------------------------------')
+    print('           HELLO WORLD...')
+    print('--------------------------------------')
+    print()
+
+
+def options():
+    cmd = None
+    choice = ['Hello World', 'Find my Birthday', 'Make a journal']
+
+    while cmd != 'x':
+        print()
+        print('Let\'s decide what you will do! press \'x\' to exit')
+        for indx, items in enumerate(choice):
+            print('* [{}] {}'.format(indx + 1, items))
+
+        print()
+        cmd = input('Type number the option number you wish for. ')
+        cmd = cmd.lower().strip()
+
+        if cmd == '1':
+            hello_world.hello_main()
+        elif cmd == '2':
+            bday_test.bday_main()
+        elif cmd == '3':
+            journal()
+        elif cmd != 'x':
+            print('Sorry did not understand. Type in a number.')
+
+
+def journal():
+    print('Lets make a journal')
+
+
+main()
